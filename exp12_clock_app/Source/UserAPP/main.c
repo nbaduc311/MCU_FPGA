@@ -58,7 +58,7 @@ int main(void)
     /*======================================================================
      * SUPER LOOP - Vòng lặp chính
      *
-     * KIẾN THỨC: Pattern "Flag-based scheduling"
+     * Pattern "Flag-based scheduling"
      * ISR set flag → Main loop check và clear flag → Gọi task
      * Ưu điểm: Đơn giản, dễ debug, không cần RTOS
      *=====================================================================*/

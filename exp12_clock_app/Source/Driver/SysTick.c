@@ -87,8 +87,6 @@ void	SysTick_ConfigTime(uint32_t ms)
 void SysTick_Handler(void)
 {
 	__SYSTICK_CLEAR_COUNTER_AND_FLAG;
-	// --- Hệ số tăng tốc độ đồng hồ (DEBUG MODE) ---
-	uint16_t debug_speed = 1;
 
 	timer_repeat++;
 	if(timer_repeat >= (1000 / debug_speed))	// Ngưỡng lật cờ giây

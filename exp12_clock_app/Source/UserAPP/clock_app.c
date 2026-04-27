@@ -70,15 +70,18 @@ static uint8_t s_alarm_buf[2];
 
 /*_____ M A C R O S ________________________________________________________*/
 /* === Timeout counter: đếm ngược giây === */
-#define TIMEOUT_SECONDS   30
+#define TIMEOUT_SECONDS     30
 /* === Nhấp nháy: 500ms ON, 500ms OFF === */
-#define BLINK_PERIOD_MS   500
+#define BLINK_PERIOD_MS     500
 /* === Buzzer timing (non-blocking) === */
 #define BUZZER_PIP_MS       300
 #define BUZZER_ALARM_MS     5000
 /* === EEPROM Address === */
-#define	EEPROM_WRITE_ADDR			0xA0
-#define	EEPROM_READ_ADDR			0xA1
+#define	EEPROM_WRITE_ADDR	0xA0
+#define	EEPROM_READ_ADDR	0xA1
+/* === Debug mode speed === */
+#define DEBUG_SPEED 1000           
+ 
 /*_____ F U N C T I O N S __________________________________________________*/
 /*==========================================================================
  * PUBLIC FUNCTIONS
@@ -422,7 +425,7 @@ static void _handle_sw18(void)  /* Nút DEBUG_Mode */
 {
     _buzzer_pip();
 
-    if (debug_speed == 1) debug_speed = 2; // Bật Debug
+    if (debug_speed == 1) debug_speed = DEBUG_SPEED ; // Bật Debug
     else debug_speed = 1;                    // Tắt Debug
 }
 
@@ -532,5 +535,5 @@ static void _buzzer_alarm_start(void)
 
 static void _reset_timeout(void)
 {
-    s_timeout_cnt = TIMEOUT_SECONDS;
+    s_timeout_cnt = TIMEOUT_SECONDS * debug_speed;
 }
