@@ -5,7 +5,7 @@
 **ROM:** 4.14 KB / 32 KB | **RAM:** 0.64 KB / 8 KB
 
 ---
-
+![Board SN32F407](images/board.jpg)
 ## Mục Lục
 
 - [Tính Năng](#tính-năng)
@@ -175,7 +175,7 @@ clock_app/
 
 ## State Machine
 
-![State Machine](images/FSM.png)
+![State Machine ](images/FSM.png)
 
 ---
 
